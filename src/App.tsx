@@ -1,12 +1,12 @@
 import React from 'react';
-import './App.css';
+import './App.sass';
 import {Button} from "antd";
 
 function App() {
     return (
         <div className="App">
             <header className="App-header">
-                <Button type='primary'>点我</Button>
+                <Button type='primary'>点我111</Button>
             </header>
         </div>
     );
