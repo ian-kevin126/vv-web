@@ -1,13 +1,11 @@
 import React from 'react';
 import './App.css';
-import {Button} from "antd";
+import Login from "./pages/home/Login";
 
 function App() {
     return (
-        <div className="App">
-            <header className="App-header">
-                <Button type='primary'>点我11</Button>
-            </header>
+        <div>
+           <Login />
         </div>
     );
 }
