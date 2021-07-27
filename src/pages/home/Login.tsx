@@ -24,10 +24,13 @@ export default function UnauthenticatedApp() {
                 <Button type={"link"} onClick={() => setIsRegister(!isRegister)}>
                     {isRegister ? "已经有账号了？直接登录" : "没有账号？注册新账号"}
                 </Button>
+                <div>测试样式</div>
             </ShadowCard>
         </Container>
     );
 }
+
+
 
 export const LongButton = styled(Button)`
   width: 100%;
@@ -65,6 +68,10 @@ const ShadowCard = styled(Card)`
   box-sizing: border-box;
   box-shadow: rgba(0, 0, 0, 0.1) 0 0 10px;
   text-align: center;
+  
+  &div {
+    color: red;
+  }
 `;
 
 const Container = styled.div`
