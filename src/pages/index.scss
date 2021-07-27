@@ -1,0 +1,85 @@
+// 1，全局和局部变量
+$theme-color: #b51010; //全局变量
+$defaultWidth: 100px; //全局变量
+$defaultWidth: 200px !default;
+
+// 2，混合器
+// 2-1，基本用法
+@mixin btn {
+  width: 120px;
+  height: 35px;
+  border: 1px solid lightgray;
+  border-radius: 15px;
+}
+
+.btn-success {
+  @include btn;
+  background-color: green;
+}
+
+// 2-2，混合器传参，默认参数
+@mixin flex-box($direction: column) {
+  display: flex;
+  flex-direction: $direction;
+}
+
+.item1 {
+  @include flex-box;
+  justify-content: center;
+  align-items: center;
+}
+
+// 3，选择器继承
+// 通过选择器继承继承样式
+.error {
+  border: 1px solid red;
+  background-color: #fdd;
+}
+
+.loading-error {
+  @extend .error;
+  border-width: 3px;
+}
+
+.grandDom {
+  $height: 100px; // 定义变量  局部变量
+  height: $height; //引用变量
+  background: $theme-color;
+  margin-top: 50px;
+  padding-top: 25px;
+
+  &:hover {
+    background: #61dafb;
+  }
+
+  .fatherDom {
+    @include flex-box(row);
+    justify-content: space-between;
+    align-items: center;
+    $height: 50px;
+
+    div:nth-child(1) {
+      background: bisque;
+      height: $height;
+      line-height: $height;
+      text-align: center;
+      min-width: 300px;
+    }
+
+    div:nth-child(2) {
+      background: #c6771c;
+      height: $height;
+      line-height: $height;
+      text-align: center;
+      min-width: 300px;
+    }
+
+    div:nth-child(3) {
+      background: #63a717;
+      height: $height;
+      line-height: $height;
+      text-align: center;
+      min-width: 300px;
+    }
+  }
+}
