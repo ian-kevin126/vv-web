@@ -6,7 +6,7 @@ const Search: React.FC = () => {
 
     return (<Container>
         <ShadowCard>
-            search
+            search111111
         </ShadowCard>
     </Container>)
 }
