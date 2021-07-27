@@ -3,8 +3,11 @@ import {Button, Form, Input} from "antd";
 
 export const LoginScreen = () => {
 
+    const handleOnFinish = () => {
+        // todo:
+    }
     return (
-        <Form>
+        <Form onFinish={handleOnFinish}>
             <Form.Item
                 name={"username"}
                 rules={[{required: true, message: "请输入用户名"}]}

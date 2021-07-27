@@ -1,19 +1,18 @@
 import styled from '@emotion/styled'
 import {Button, Card} from "antd";
 import React from "react";
+import {WrapperCard} from "../search/Search";
+import {useDispatch} from "react-redux";
+import {SearchActions} from "../search/Search.slice";
 
-const StyledTest1: React.FC = () => {
-    return (<div>
+const TaskList: React.FC = () => {
+    const dispatch = useDispatch();
+    return (<WrapperCard>
         <RowBox between={true} marginBottom={1} gap={5}>
-            <h1>任务组</h1>
-            <Button type={"link"}>
-                创建任务组
-            </Button>
+            <h1>兄弟组件1</h1>
+            <Button type={"primary"} onClick={() => dispatch(SearchActions.openModal())}>打开弹框</Button>
         </RowBox>
-        <Card>
-            卡片
-        </Card>
-    </div>)
+    </WrapperCard>)
 }
 
 export const RowBox = styled(Card)<{
@@ -34,4 +33,4 @@ export const RowBox = styled(Card)<{
 };}
 `;
 
-export default StyledTest1;
+export default TaskList;
