@@ -1,13 +1,13 @@
 import React from 'react';
 import './App.css';
-import {Button} from "antd";
+import Login from "./pages/home/Login";
+import StyledTest1 from "./pages/styledTest/StyledTest1";
 
 function App() {
     return (
-        <div className="App">
-            <header className="App-header">
-                <Button type='primary'>点我</Button>
-            </header>
+        <div>
+            {/*<Login />*/}
+            <StyledTest1/>
         </div>
     );
 }
